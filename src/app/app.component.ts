@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +7,12 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+
+  fullName: string;
+  email: string;
+  newsletter: boolean = false;
+
+  submit(form: NgForm) {
+    console.log(form.value);
+  }
 }
